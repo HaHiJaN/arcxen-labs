@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ARCXEN LABS | Booking Kiosk</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <h1>ARCXEN LABS</h1>
+            <p>Engineering the Extraordinary.</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html">Founder</a>
+            <a href="kiosk.html" class="active" aria-current="page">
+                Booking Kiosk
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Kiosk Introduction -->
+        <section class="kiosk-intro">
+            <h2>Equipment Booking Kiosk</h2>
+
+            <p>
+                Configure your superhero equipment package,
+                select optional upgrades, and calculate
+                your booking cost instantly.
+            </p>
+        </section>
+
+        <!-- Booking Form -->
+        <section class="booking-section">
+            <h2>Configure Your Equipment</h2>
+
+            <form id="bookingForm" novalidate>
+
+                <!-- Customer Information -->
+                <fieldset>
+                    <legend>Customer Information</legend>
+
+                    <div class="form-group">
+                        <label for="customerName">
+                            Full Name *
+                        </label>
+
+                        <input type="text" id="customerName" name="customerName" placeholder="Enter your full name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerEmail">
+                            Email Address *
+                        </label>
+
+                        <input type="email" id="customerEmail" name="customerEmail" placeholder="example@email.com"
+                            required>
+                    </div>
+                </fieldset>
+
+                <!-- Equipment Selection -->
+                <fieldset>
+                    <legend>Equipment Selection</legend>
+
+                    <div class="form-group">
+                        <label for="package">
+                            Equipment Package *
+                        </label>
+
+                        <select id="package" name="package" required>
+                            <option value="">
+                                -- Select a Package --
+                            </option>
+
+                            <option value="120">
+                                AX-01 Initiate - RM120.00
+                            </option>
+
+                            <option value="250">
+                                AX-02 Sentinel - RM250.00
+                            </option>
+
+                            <option value="450">
+                                AX-03 Vanguard - RM450.00
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">
+                            Quantity (1-10 Sets) *
+                        </label>
+
+                        <input type="number" id="quantity" name="quantity" min="1" max="10" step="1"
+                            placeholder="Enter quantity" required>
+                    </div>
+                </fieldset>
+
+                <!-- Optional Extras -->
+                <fieldset>
+                    <legend>Optional Upgrades</legend>
+
+                    <p>
+                        Each selected upgrade is charged
+                        per equipment set.
+                    </p>
+
+                    <div class="checkbox-group">
+                        <label for="arcBooster">
+                            <input type="checkbox" id="arcBooster" name="extras" value="40">
+                            Arc Power Booster (+RM40.00/set)
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label for="aiAssistant">
+                            <input type="checkbox" id="aiAssistant" name="extras" value="60">
+                            AI Tactical Assistant (+RM60.00/set)
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- Booking Rules -->
+                <section class="booking-rules">
+                    <h3>Booking Rules</h3>
+
+                    <ul>
+                        <li>Select one equipment package.</li>
+                        <li>Quantity must be between 1 and 10 sets.</li>
+                        <li>Optional upgrades can be selected together.</li>
+                        <li>Upgrade prices apply to every set.</li>
+                        <li>No tax or discount is applied.</li>
+                    </ul>
+
+                    <p>
+                        Total Cost = (Package Price + Selected
+                        Upgrades) x Quantity
+                    </p>
+                </section>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="submit" id="calculateBtn">
+                        Calculate Booking
+                    </button>
+
+                    <button type="reset" id="resetBtn">
+                        Reset Form
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Booking Result -->
+        <section id="resultSection" class="result-section" aria-live="polite" hidden>
+            <h2>Booking Summary</h2>
+
+            <div id="bookingResult"></div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 ARCXEN LABS. All rights reserved.</p>
+            <p>ICT600 Individual Assignment</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
